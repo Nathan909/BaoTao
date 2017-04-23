@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.pareto.bao.baotao.presenter.MainActivity">
+
+    <LinearLayout
+        android:id="@+id/content"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="#FAFAFA"
+        android:elevation="20dp" />
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/radioButton1"
+            style="@style/radiobutton_style"
+            android:checked="true"
+            android:drawableTop="@drawable/ic_nav_home" />
+
+        <RadioButton
+            android:id="@+id/radioButton2"
+            style="@style/radiobutton_style"
+            android:drawableTop="@drawable/ic_nav_weitao" />
+
+        <RadioButton
+            android:id="@+id/radioButton3"
+            style="@style/radiobutton_style"
+            android:drawableTop="@drawable/ic_nav_ask" />
+
+        <RadioButton
+            android:id="@+id/radioButton4"
+            style="@style/radiobutton_style"
+            android:drawableTop="@drawable/ic_nav_cart" />
+
+        <RadioButton
+            android:id="@+id/radioButton5"
+            style="@style/radiobutton_style"
+            android:drawableTop="@drawable/ic_nav_my" />
+    </RadioGroup>
+</LinearLayout>

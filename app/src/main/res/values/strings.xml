@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">宝淘</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="fragment1">fragment1</string>
+    <string name="fragment2">fragment2</string>
+    <string name="fragment3">fragment3</string>
+    <string name="fragment4">fragment4</string>
+    <string name="fragment5">fragment5</string>
+
+    <integer name="scale_icon_duration">200</integer>
+</resources>
