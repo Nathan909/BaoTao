@@ -8,8 +8,8 @@ import android.view.ViewGroup;
 
 import com.pareto.bao.baotao.R;
 
+public class HomeFragment extends Fragment {
 
-public class Fragment5 extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -19,6 +19,18 @@ public class Fragment5 extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_fragment5, container, false);
+        View view=inflater.inflate(R.layout.home, container, false);
+        initView(view);
+        initData();
+        return view;
     }
+
+    private void initView(View view){
+
+    }
+
+    private void initData(){
+
+    }
+
 }

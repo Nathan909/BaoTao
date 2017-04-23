@@ -10,21 +10,19 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
 import com.pareto.bao.baotao.R;
-import com.pareto.bao.baotao.view.Fragment1;
-import com.pareto.bao.baotao.view.Fragment2;
-import com.pareto.bao.baotao.view.Fragment3;
-import com.pareto.bao.baotao.view.Fragment4;
-import com.pareto.bao.baotao.view.Fragment5;
-
-import static com.pareto.bao.baotao.R.id.radioButton1;
+import com.pareto.bao.baotao.view.HomeFragment;
+import com.pareto.bao.baotao.view.WeitaoFragment;
+import com.pareto.bao.baotao.view.QuestionFragment;
+import com.pareto.bao.baotao.view.CartFragment;
+import com.pareto.bao.baotao.view.MyFragment;
 
 
 public class MainActivity extends AppCompatActivity {
-    private Fragment1 fragment1;
-    private Fragment2 fragment2;
-    private Fragment3 fragment3;
-    private Fragment4 fragment4;
-    private Fragment5 fragment5;
+    private HomeFragment homeFragment;
+    private WeitaoFragment weitaoFragment;
+    private QuestionFragment questionFragment;
+    private CartFragment cartFragment;
+    private MyFragment myFragment;
     private FragmentManager fragmentManager;
     private RadioGroup radioGroup;
     private RadioButton radioButton;
@@ -40,11 +38,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void initView() {
-        fragment1 = new Fragment1();
-        fragment2 = new Fragment2();
-        fragment3 = new Fragment3();
-        fragment4 = new Fragment4();
-        fragment5 = new Fragment5();
+        homeFragment = new HomeFragment();
+        weitaoFragment = new WeitaoFragment();
+        questionFragment = new QuestionFragment();
+        cartFragment = new CartFragment();
+        myFragment = new MyFragment();
         fragmentManager = getSupportFragmentManager();
         radioGroup = (RadioGroup) findViewById(R.id.radioGroup);
         radioGroup.setOnCheckedChangeListener(new onCheckedChangeListener());
@@ -56,19 +54,19 @@ public class MainActivity extends AppCompatActivity {
         public void onCheckedChanged(RadioGroup group, int checkedId) {
             switch (checkedId) {
                 case R.id.radioButton1:
-                    fragmentManager.beginTransaction().replace(R.id.content, new Fragment1()).addToBackStack(null).commit();
+                    fragmentManager.beginTransaction().replace(R.id.content, new HomeFragment()).addToBackStack(null).commit();
                     break;
                 case R.id.radioButton2:
-                    fragmentManager.beginTransaction().replace(R.id.content, new Fragment2()).addToBackStack(null).commit();
+                    fragmentManager.beginTransaction().replace(R.id.content, new WeitaoFragment()).addToBackStack(null).commit();
                     break;
                 case R.id.radioButton3:
-                    fragmentManager.beginTransaction().replace(R.id.content, new Fragment3()).addToBackStack(null).commit();
+                    fragmentManager.beginTransaction().replace(R.id.content, new QuestionFragment()).addToBackStack(null).commit();
                     break;
                 case R.id.radioButton4:
-                    fragmentManager.beginTransaction().replace(R.id.content, new Fragment4()).addToBackStack(null).commit();
+                    fragmentManager.beginTransaction().replace(R.id.content, new CartFragment()).addToBackStack(null).commit();
                     break;
                 case R.id.radioButton5:
-                    fragmentManager.beginTransaction().replace(R.id.content, new Fragment5()).addToBackStack(null).commit();
+                    fragmentManager.beginTransaction().replace(R.id.content, new MyFragment()).addToBackStack(null).commit();
                     break;
             }
 
