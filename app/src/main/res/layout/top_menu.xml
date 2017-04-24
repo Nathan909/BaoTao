@@ -2,11 +2,10 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/sv_search_view"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="50dp"
     android:layout_gravity="top"
-    android:background="#FF5000"
-    android:orientation="horizontal"
-    android:weightSum="1">
+    android:background="#FF8000"
+    android:orientation="horizontal">
 
     <LinearLayout
         android:id="@+id/bar_search"
@@ -15,9 +14,10 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_weight="0.1"
+        android:layout_weight="0.08"
         android:gravity="center"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:paddingTop="3dp">
 
         <ImageView
             android:id="@+id/scan_code_icon"
@@ -30,15 +30,18 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="扫一扫"
+            android:textColor="@color/actionbar"
+            android:paddingTop="2dp"
             android:textSize="10sp" />
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/home_searchbar"
-        android:layout_width="200dp"
+        android:layout_width="0dp"
         android:layout_height="40dp"
-        android:layout_weight="0.8"
+        android:layout_weight="0.84"
         android:gravity="center"
+        android:paddingTop="6dp"
         android:orientation="vertical">
 
         <LinearLayout
@@ -49,33 +52,34 @@
             <ImageView
                 android:id="@+id/search_icon"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="33dp"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
+                android:paddingTop="5dp"
                 android:src="@drawable/abc_ic_search_api_mtrl_alpha" />
-
 
             <EditText
                 android:id="@+id/home_searchedit"
-                android:layout_width="250dp"
-                android:layout_height="33dp" />
+                android:layout_width="200dp"
+                android:layout_height="33dp"
+                android:background="@null" />
 
             <ImageView
                 android:id="@+id/pai_li_tao_icon"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="33dp"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentRight="true"
                 android:layout_alignParentTop="true"
+                android:paddingTop="5dp"
                 android:src="@drawable/android_icon_camera" />
-
         </LinearLayout>
 
         <View
             android:id="@+id/v_search_bar_line"
             android:layout_width="match_parent"
-            android:layout_height="1px"
+            android:layout_height="5px"
             android:background="#FFFFFF" />
     </LinearLayout>
 
@@ -86,9 +90,10 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentTop="true"
-        android:layout_weight="0.1"
+        android:layout_weight="0.08"
         android:gravity="center"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:paddingTop="3dp">
 
         <ImageView
             android:id="@+id/expand_action_item"
@@ -101,7 +106,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="消息"
+            android:textColor="@color/actionbar"
             android:textSize="10sp" />
     </LinearLayout>
-
 </LinearLayout>
