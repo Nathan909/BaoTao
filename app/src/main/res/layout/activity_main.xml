@@ -17,39 +17,38 @@
     <View
         android:layout_width="match_parent"
         android:layout_height="1px"
-        android:background="#FAFAFA"
-        android:elevation="20dp" />
+        android:background="#F4F4F4" />
 
     <RadioGroup
         android:id="@+id/radioGroup"
         android:layout_width="match_parent"
-        android:layout_height="56dp"
+        android:layout_height="55dp"
         android:orientation="horizontal">
 
         <RadioButton
             android:id="@+id/radioButton1"
-            style="@style/radiobutton_style"
+            style="@style/rb_nav_style"
             android:checked="true"
             android:drawableTop="@drawable/ic_nav_home" />
 
         <RadioButton
             android:id="@+id/radioButton2"
-            style="@style/radiobutton_style"
+            style="@style/rb_nav_style"
             android:drawableTop="@drawable/ic_nav_weitao" />
 
         <RadioButton
             android:id="@+id/radioButton3"
-            style="@style/radiobutton_style"
+            style="@style/rb_nav_style"
             android:drawableTop="@drawable/ic_nav_ask" />
 
         <RadioButton
             android:id="@+id/radioButton4"
-            style="@style/radiobutton_style"
+            style="@style/rb_nav_style"
             android:drawableTop="@drawable/ic_nav_cart" />
 
         <RadioButton
             android:id="@+id/radioButton5"
-            style="@style/radiobutton_style"
+            style="@style/rb_nav_style"
             android:drawableTop="@drawable/ic_nav_my" />
     </RadioGroup>
 </LinearLayout>
