@@ -11,9 +11,6 @@
         android:id="@+id/bar_search"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
         android:layout_weight="0.08"
         android:gravity="center"
         android:orientation="vertical"
@@ -29,9 +26,9 @@
             android:id="@+id/tv_scan_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:paddingTop="2dp"
             android:text="扫一扫"
             android:textColor="@color/actionbar"
-            android:paddingTop="2dp"
             android:textSize="10sp" />
     </LinearLayout>
 
@@ -41,8 +38,8 @@
         android:layout_height="40dp"
         android:layout_weight="0.84"
         android:gravity="center"
-        android:paddingTop="6dp"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:paddingTop="6dp">
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -53,9 +50,6 @@
                 android:id="@+id/search_icon"
                 android:layout_width="wrap_content"
                 android:layout_height="33dp"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentTop="true"
                 android:paddingTop="5dp"
                 android:src="@drawable/abc_ic_search_api_mtrl_alpha" />
 
@@ -69,9 +63,6 @@
                 android:id="@+id/pai_li_tao_icon"
                 android:layout_width="wrap_content"
                 android:layout_height="33dp"
-                android:layout_alignParentEnd="true"
-                android:layout_alignParentRight="true"
-                android:layout_alignParentTop="true"
                 android:paddingTop="5dp"
                 android:src="@drawable/android_icon_camera" />
         </LinearLayout>
@@ -79,7 +70,7 @@
         <View
             android:id="@+id/v_search_bar_line"
             android:layout_width="match_parent"
-            android:layout_height="5px"
+            android:layout_height="2dp"
             android:background="#FFFFFF" />
     </LinearLayout>
 
@@ -87,9 +78,6 @@
         android:id="@+id/actionbar_info"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentTop="true"
         android:layout_weight="0.08"
         android:gravity="center"
         android:orientation="vertical"
