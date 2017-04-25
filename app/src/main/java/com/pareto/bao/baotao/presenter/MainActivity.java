@@ -53,19 +53,19 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public void onCheckedChanged(RadioGroup group, int checkedId) {
             switch (checkedId) {
-                case R.id.radioButton1:
+                case R.id.rb_nav_home:
                     fragmentManager.beginTransaction().replace(R.id.content, new HomeFragment()).addToBackStack(null).commit();
                     break;
-                case R.id.radioButton2:
+                case R.id.rb_nav_weitao:
                     fragmentManager.beginTransaction().replace(R.id.content, new WeitaoFragment()).addToBackStack(null).commit();
                     break;
-                case R.id.radioButton3:
+                case R.id.rb_nav_ask:
                     fragmentManager.beginTransaction().replace(R.id.content, new QuestionFragment()).addToBackStack(null).commit();
                     break;
-                case R.id.radioButton4:
+                case R.id.rb_nav_cart:
                     fragmentManager.beginTransaction().replace(R.id.content, new CartFragment()).addToBackStack(null).commit();
                     break;
-                case R.id.radioButton5:
+                case R.id.rb_nav_my:
                     fragmentManager.beginTransaction().replace(R.id.content, new MyFragment()).addToBackStack(null).commit();
                     break;
             }

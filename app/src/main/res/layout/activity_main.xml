@@ -26,28 +26,28 @@
         android:orientation="horizontal">
 
         <RadioButton
-            android:id="@+id/radioButton1"
+            android:id="@+id/rb_nav_home"
             style="@style/rb_nav_style"
             android:checked="true"
             android:drawableTop="@drawable/ic_nav_home" />
 
         <RadioButton
-            android:id="@+id/radioButton2"
+            android:id="@+id/rb_nav_weitao"
             style="@style/rb_nav_style"
             android:drawableTop="@drawable/ic_nav_weitao" />
 
         <RadioButton
-            android:id="@+id/radioButton3"
+            android:id="@+id/rb_nav_ask"
             style="@style/rb_nav_style"
             android:drawableTop="@drawable/ic_nav_ask" />
 
         <RadioButton
-            android:id="@+id/radioButton4"
+            android:id="@+id/rb_nav_cart"
             style="@style/rb_nav_style"
             android:drawableTop="@drawable/ic_nav_cart" />
 
         <RadioButton
-            android:id="@+id/radioButton5"
+            android:id="@+id/rb_nav_my"
             style="@style/rb_nav_style"
             android:drawableTop="@drawable/ic_nav_my" />
     </RadioGroup>
