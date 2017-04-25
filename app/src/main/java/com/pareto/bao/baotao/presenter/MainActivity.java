@@ -12,7 +12,7 @@ import android.widget.RadioGroup;
 import com.pareto.bao.baotao.R;
 import com.pareto.bao.baotao.view.HomeFragment;
 import com.pareto.bao.baotao.view.WeitaoFragment;
-import com.pareto.bao.baotao.view.QuestionFragment;
+import com.pareto.bao.baotao.view.AskFragment;
 import com.pareto.bao.baotao.view.CartFragment;
 import com.pareto.bao.baotao.view.MyFragment;
 
@@ -20,7 +20,7 @@ import com.pareto.bao.baotao.view.MyFragment;
 public class MainActivity extends AppCompatActivity {
     private HomeFragment homeFragment;
     private WeitaoFragment weitaoFragment;
-    private QuestionFragment questionFragment;
+    private AskFragment askFragment;
     private CartFragment cartFragment;
     private MyFragment myFragment;
     private FragmentManager fragmentManager;
@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
     private void initView() {
         homeFragment = new HomeFragment();
         weitaoFragment = new WeitaoFragment();
-        questionFragment = new QuestionFragment();
+        askFragment = new AskFragment();
         cartFragment = new CartFragment();
         myFragment = new MyFragment();
         fragmentManager = getSupportFragmentManager();
@@ -60,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
                     fragmentManager.beginTransaction().replace(R.id.content, new WeitaoFragment()).addToBackStack(null).commit();
                     break;
                 case R.id.rb_nav_ask:
-                    fragmentManager.beginTransaction().replace(R.id.content, new QuestionFragment()).addToBackStack(null).commit();
+                    fragmentManager.beginTransaction().replace(R.id.content, new AskFragment()).addToBackStack(null).commit();
                     break;
                 case R.id.rb_nav_cart:
                     fragmentManager.beginTransaction().replace(R.id.content, new CartFragment()).addToBackStack(null).commit();

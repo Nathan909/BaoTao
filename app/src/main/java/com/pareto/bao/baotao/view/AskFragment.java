@@ -9,7 +9,7 @@ import android.view.ViewGroup;
 import com.pareto.bao.baotao.R;
 
 
-public class QuestionFragment extends Fragment {
+public class AskFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -19,6 +19,6 @@ public class QuestionFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.question, container, false);
+        return inflater.inflate(R.layout.ask_fragment, container, false);
     }
 }
