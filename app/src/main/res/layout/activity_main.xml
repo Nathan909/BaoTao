@@ -28,7 +28,6 @@
         <RadioButton
             android:id="@+id/rb_nav_home"
             style="@style/rb_nav_style"
-            android:checked="true"
             android:drawableTop="@drawable/ic_nav_home" />
 
         <RadioButton
