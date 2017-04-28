@@ -11,7 +11,28 @@ import com.pareto.bao.baotao.R;
 
 public class HomeFragment extends Fragment {
     private RecyclerView recyclerView;
-    private HomeRecyclerViewAdapter adapter;
+    private HomeRecyclerViewAdapter homeRecyclerViewAdapter;
+
+    /**
+     * fragment生命周期：
+     * onAttach -->
+     * onCreate -->
+     * onCreateView -->
+     * onActivityCreated -->
+     * onStart() -->
+     * onResume() -->
+     * ------fragment active
+     * onPause() -->
+     * onStop() -->
+     * onDestroyView() -->
+     * onDestroy() -->
+     * onDetach()
+     * ------fragment is Destroyed
+     */
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -25,11 +46,11 @@ public class HomeFragment extends Fragment {
 
     private void initView(View view) {
         recyclerView = (RecyclerView) view.findViewById(R.id.rv_home);
-        adapter = new HomeRecyclerViewAdapter();
+        homeRecyclerViewAdapter = new HomeRecyclerViewAdapter();
     }
 
     private void initData() {
-        recyclerView.setAdapter(adapter);
+        recyclerView.setAdapter(homeRecyclerViewAdapter);
     }
 
 }

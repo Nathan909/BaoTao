@@ -1,10 +1,11 @@
 package com.pareto.bao.baotao.presenter;
 
+import android.os.Build;
 import android.os.Bundle;
-import android.os.Handler;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
+import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.RadioButton;
@@ -27,12 +28,12 @@ public class MainActivity extends AppCompatActivity {
     private MyFragment myFragment;
 
     private RadioGroup radioGroup;
-    private RadioButton radioButton;
     private RadioButton rb_nav_home;
     private RadioButton rb_nav_weitao;
     private RadioButton rb_nav_ask;
     private RadioButton rb_nav_cart;
     private RadioButton rb_nav_my;
+
     private Animation scaleAnimation;
 
     private static String TAG = "MainActivity";
@@ -44,6 +45,9 @@ public class MainActivity extends AppCompatActivity {
         initView();
     }
 
+    /**
+     * 初始化view
+     */
     private void initView() {
         fragmentManager = getSupportFragmentManager();
         radioGroup = (RadioGroup) findViewById(R.id.radioGroup);
@@ -59,7 +63,9 @@ public class MainActivity extends AppCompatActivity {
         rb_nav_home.setChecked(true);
     }
 
-    //单选点击监听
+    /**
+     * 导航栏点击动画
+     */
     private class onCheckedChangeListener implements RadioGroup.OnCheckedChangeListener {
         @Override
         public void onCheckedChanged(RadioGroup group, int checkedId) {
@@ -112,6 +118,11 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * 隐藏所有fragment
+     *
+     * @param fragmentTransaction
+     */
     private void hideAllFragment(FragmentTransaction fragmentTransaction) {
         if (homeFragment != null)
             fragmentTransaction.hide(homeFragment);
