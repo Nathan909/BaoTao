@@ -28,11 +28,8 @@ public class MainActivity extends AppCompatActivity {
     private MyFragment myFragment;
 
     private RadioGroup radioGroup;
+    private RadioButton rb_nav;
     private RadioButton rb_nav_home;
-    private RadioButton rb_nav_weitao;
-    private RadioButton rb_nav_ask;
-    private RadioButton rb_nav_cart;
-    private RadioButton rb_nav_my;
 
     private Animation scaleAnimation;
 
@@ -54,10 +51,6 @@ public class MainActivity extends AppCompatActivity {
         scaleAnimation = AnimationUtils.loadAnimation(this, R.anim.scale_icon);
 
         rb_nav_home = (RadioButton) findViewById(R.id.rb_nav_home);
-        rb_nav_weitao = (RadioButton) findViewById(R.id.rb_nav_weitao);
-        rb_nav_ask = (RadioButton) findViewById(R.id.rb_nav_ask);
-        rb_nav_cart = (RadioButton) findViewById(R.id.rb_nav_cart);
-        rb_nav_my = (RadioButton) findViewById(R.id.rb_nav_my);
 
         radioGroup.setOnCheckedChangeListener(new onCheckedChangeListener());
         rb_nav_home.setChecked(true);
@@ -79,7 +72,6 @@ public class MainActivity extends AppCompatActivity {
                         fragmentTransaction.add(R.id.content, homeFragment);
                     } else
                         fragmentTransaction.show(homeFragment);
-                    rb_nav_home.startAnimation(scaleAnimation);
                     break;
                 case R.id.rb_nav_weitao:
                     if (weitaoFragment == null) {
@@ -87,7 +79,6 @@ public class MainActivity extends AppCompatActivity {
                         fragmentTransaction.add(R.id.content, weitaoFragment);
                     } else
                         fragmentTransaction.show(weitaoFragment);
-                    rb_nav_weitao.startAnimation(scaleAnimation);
                     break;
                 case R.id.rb_nav_ask:
                     if (askFragment == null) {
@@ -95,7 +86,6 @@ public class MainActivity extends AppCompatActivity {
                         fragmentTransaction.add(R.id.content, askFragment);
                     } else
                         fragmentTransaction.show(askFragment);
-                    rb_nav_ask.startAnimation(scaleAnimation);
                     break;
                 case R.id.rb_nav_cart:
                     if (cartFragment == null) {
@@ -103,7 +93,6 @@ public class MainActivity extends AppCompatActivity {
                         fragmentTransaction.add(R.id.content, cartFragment);
                     } else
                         fragmentTransaction.show(cartFragment);
-                    rb_nav_cart.startAnimation(scaleAnimation);
                     break;
                 case R.id.rb_nav_my:
                     if (myFragment == null) {
@@ -111,9 +100,11 @@ public class MainActivity extends AppCompatActivity {
                         fragmentTransaction.add(R.id.content, myFragment);
                     } else
                         fragmentTransaction.show(myFragment);
-                    rb_nav_my.startAnimation(scaleAnimation);
                     break;
             }
+
+            rb_nav = (RadioButton) findViewById(checkedId);
+            rb_nav.startAnimation(scaleAnimation);
             fragmentTransaction.commit();
         }
     }
