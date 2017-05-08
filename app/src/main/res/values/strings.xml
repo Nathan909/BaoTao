@@ -12,4 +12,10 @@
     <string name="scan">扫一扫</string>
     <string name="msg">消息</string>
     <string name="search_default">寻找宝贝、店铺</string>
+
+    <string name="weitao">微淘</string>
+    <string name="weitao_dynamic">关注动态</string>
+    <string name="weitao_new">宝贝上新</string>
+    <string name="weitao_direct_seeding">视频直播</string>
+    <string name="weitao_topic_list">精选热榜</string>
 </resources>

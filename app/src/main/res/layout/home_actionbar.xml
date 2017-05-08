@@ -28,7 +28,7 @@
             android:layout_height="wrap_content"
             android:paddingTop="2dp"
             android:text="@string/scan"
-            android:textColor="@color/actionbar"
+            android:textColor="@color/white"
             android:textSize="10sp" />
     </LinearLayout>
 
@@ -61,7 +61,7 @@
                 android:layout_marginRight="30dp"
                 android:background="@null"
                 android:hint="@string/search_default"
-                android:textColorHint="#ffffff"
+                android:textColorHint="@color/white"
                 android:textSize="13sp" />
 
             <ImageView
@@ -78,7 +78,7 @@
             android:layout_width="match_parent"
             android:layout_height="1dp"
             android:layout_marginTop="5dp"
-            android:background="#FFFFFF" />
+            android:background="@color/white" />
     </LinearLayout>
 
     <LinearLayout
@@ -101,7 +101,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/msg"
-            android:textColor="@color/actionbar"
+            android:textColor="@color/white"
             android:textSize="10sp" />
     </LinearLayout>
 </LinearLayout>
