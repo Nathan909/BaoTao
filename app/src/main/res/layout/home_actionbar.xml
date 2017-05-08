@@ -20,14 +20,14 @@
             android:id="@+id/scan_code_icon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/tb_icon_more_msg_56" />
+            android:src="@drawable/tb_icon_scan" />
 
         <TextView
             android:id="@+id/tv_scan_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingTop="2dp"
-            android:text="扫一扫"
+            android:text="@string/scan"
             android:textColor="@color/actionbar"
             android:textSize="10sp" />
     </LinearLayout>
@@ -40,39 +40,45 @@
         android:gravity="center"
         android:orientation="vertical">
 
-        <LinearLayout
+        <RelativeLayout
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="bottom"
-            android:orientation="horizontal">
+            android:layout_height="wrap_content">
 
             <ImageView
                 android:id="@+id/search_icon"
-                android:layout_width="wrap_content"
-                android:layout_height="33dp"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_alignParentLeft="true"
                 android:paddingTop="5dp"
-                android:src="@drawable/abc_ic_search_api_mtrl_alpha" />
+                android:src="@drawable/abc_ic_search" />
 
             <EditText
                 android:id="@+id/home_searchedit"
-                android:layout_width="200dp"
-                android:layout_height="33dp"
-                android:background="@null" />
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/search_icon"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:background="@null"
+                android:hint="@string/search_default"
+                android:textColorHint="#ffffff"
+                android:textSize="13sp" />
 
             <ImageView
                 android:id="@+id/pai_li_tao_icon"
-                android:layout_width="wrap_content"
-                android:layout_height="33dp"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_alignParentRight="true"
                 android:paddingTop="5dp"
-                android:src="@drawable/android_icon_camera" />
-        </LinearLayout>
+                android:src="@drawable/abc_ic_camera" />
+        </RelativeLayout>
 
         <View
             android:id="@+id/v_search_bar_line"
             android:layout_width="match_parent"
-            android:layout_height="2dp"
-            android:background="#FFFFFF"
-            android:gravity="top" />
+            android:layout_height="1dp"
+            android:layout_marginTop="5dp"
+            android:background="#FFFFFF" />
     </LinearLayout>
 
     <LinearLayout
@@ -88,13 +94,13 @@
             android:id="@+id/expand_action_item"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/tb_icon_more_msg_56" />
+            android:src="@drawable/tb_icon_msg" />
 
         <TextView
             android:id="@+id/tv_msg_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="消息"
+            android:text="@string/msg"
             android:textColor="@color/actionbar"
             android:textSize="10sp" />
     </LinearLayout>

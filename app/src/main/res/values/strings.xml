@@ -9,5 +9,7 @@
     <string name="fragment4">fragment4</string>
     <string name="fragment5">fragment5</string>
 
-    <integer name="scale_icon_duration">200</integer>
+    <string name="scan">扫一扫</string>
+    <string name="msg">消息</string>
+    <string name="search_default">寻找宝贝、店铺</string>
 </resources>
