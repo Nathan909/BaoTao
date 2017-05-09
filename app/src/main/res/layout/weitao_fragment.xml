@@ -1,10 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".view.WeitaoFragment">
 
-    <include layout="@layout/weitao_actionbar" />
+    <!--标题栏-->
+    <include
+        android:id="@+id/tf_app_bar_layout"
+        layout="@layout/weitao_actionbar" />
 
-</FrameLayout>
+    <!--数据展示-->
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/tf_tab_page"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</RelativeLayout>

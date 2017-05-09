@@ -17,5 +17,5 @@
     <string name="weitao_dynamic">关注动态</string>
     <string name="weitao_new">宝贝上新</string>
     <string name="weitao_direct_seeding">视频直播</string>
-    <string name="weitao_topic_list">精选热榜</string>
+    <string name="weitao_hot_topic">精选热榜</string>
 </resources>
