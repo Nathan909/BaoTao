@@ -37,6 +37,20 @@ public class WeitaoFragment extends Fragment implements Animator.AnimatorListene
 
     private int mOrientation;
 
+    /**
+     * fragment 生命周期：
+     * onAttach -->
+     * onCreate -->
+     * onCreateView -->
+     * onActivityCreated -->
+     * onStart() -->
+     * onResume------fragment active
+     * onPause() -->
+     * onStop() -->
+     * onDestroyView() -->
+     * onDestroy() -->
+     * onDetach()-----fragment is Destroyed
+     */
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,7 +59,7 @@ public class WeitaoFragment extends Fragment implements Animator.AnimatorListene
 
     private void initData() {
         items = new ArrayList<String>();
-        for (int i = 0; i < 100; i++) {
+        for (int i = 1; i < 100; i++) {
             items.add("" + i);
         }
     }
@@ -156,26 +170,9 @@ public class WeitaoFragment extends Fragment implements Animator.AnimatorListene
         }
     }
 
-    @Override
-    public void onAnimationStart(Animator animation) {
-
-    }
-
-    @Override
-    public void onAnimationEnd(Animator animation) {
-
-    }
-
-    @Override
-    public void onAnimationCancel(Animator animation) {
-
-    }
-
-    @Override
-    public void onAnimationRepeat(Animator animation) {
-
-    }
-
+    /**
+     * itemList数据适配器
+     */
     class RecyclerViewAdapter extends RecyclerView.Adapter<WeitaoViewHolder> {
 
         @Override
@@ -201,6 +198,9 @@ public class WeitaoFragment extends Fragment implements Animator.AnimatorListene
         }
     }
 
+    /**
+     * itemView持有类
+     */
     class WeitaoViewHolder extends RecyclerView.ViewHolder {
         TextView tv_item_weitao;
 
@@ -208,5 +208,25 @@ public class WeitaoFragment extends Fragment implements Animator.AnimatorListene
             super(itemView);
             tv_item_weitao = (TextView) itemView.findViewById(R.id.tv_item_weitao);
         }
+    }
+
+    @Override
+    public void onAnimationStart(Animator animation) {
+
+    }
+
+    @Override
+    public void onAnimationEnd(Animator animation) {
+
+    }
+
+    @Override
+    public void onAnimationCancel(Animator animation) {
+
+    }
+
+    @Override
+    public void onAnimationRepeat(Animator animation) {
+
     }
 }

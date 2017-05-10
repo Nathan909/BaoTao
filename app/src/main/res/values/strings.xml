@@ -8,11 +8,11 @@
     <string name="fragment3">fragment3</string>
     <string name="fragment4">fragment4</string>
     <string name="fragment5">fragment5</string>
-
+    <!--home-->
     <string name="scan">扫一扫</string>
     <string name="msg">消息</string>
     <string name="search_default">寻找宝贝、店铺</string>
-
+    <!--weitao-->
     <string name="weitao">微淘</string>
     <string name="weitao_dynamic">关注动态</string>
     <string name="weitao_new">宝贝上新</string>

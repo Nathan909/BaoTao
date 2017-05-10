@@ -72,7 +72,7 @@
                 android:id="@+id/iv_weitao_dynamic"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/weitao_dyn" />
+                android:src="@drawable/weitao_dynamic" />
 
             <TextView
                 android:id="@+id/tv_weitao_dynamic"
@@ -116,7 +116,7 @@
                 android:id="@+id/iv_weitao_direct_seeding"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/weitao_direct" />
+                android:src="@drawable/weitao_direct_seeding" />
 
             <TextView
                 android:id="@+id/tv_weitao_direct_seeding"
@@ -138,7 +138,7 @@
                 android:id="@+id/iv_weitao_hot_topic"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/weitao_top" />
+                android:src="@drawable/weitao_hot_topic" />
 
             <TextView
                 android:id="@+id/tv_weitao_hot_topic"
