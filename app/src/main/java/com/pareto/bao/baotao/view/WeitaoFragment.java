@@ -1,6 +1,7 @@
 package com.pareto.bao.baotao.view;
 
 import android.animation.Animator;
+import android.animation.ObjectAnimator;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Canvas;
@@ -10,11 +11,16 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.RecyclerView.OnScrollListener;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.AccelerateDecelerateInterpolator;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -26,16 +32,33 @@ import java.util.List;
 import static android.icu.lang.UCharacter.GraphemeClusterBreak.V;
 
 public class WeitaoFragment extends Fragment implements Animator.AnimatorListener {
+    // 总布局
     private View weitaoView;
-    private View tf_action_bar;
+
+    // 标题栏布局
+    private LinearLayout tf_app_bar_layout;
+    private RelativeLayout tf_action_bar;
     private LinearLayout tf_tab_bar;
+    // tab_bar图标
+    private ImageView iv_weitao_dynamic;
+    private ImageView iv_weitao_new;
+    private ImageView iv_weitao_direct_seeding;
+    private ImageView iv_weitao_hot_topic;
+    //tab_bar文字
+    private TextView tv_weitao_dynamic;
+    private TextView tv_weitao_new;
+    private TextView tv_weitao_direct_seeding;
+    private TextView tv_weitao_hot_topic;
+
+    // 数据内容布局
     private RecyclerView recyclerView;
-    private RecyclerViewAdapter recyclerViewAdapter;
+    private RecyclerViewAdapter recyclerViewAdapter;// 数据适配器
+    private ListView tf_tab_page;// 数据页面
+    private List<String> items;// 数据项
+    private int mOrientation;// 数据走向
 
-    private ListView tf_tab_page;
-    private List<String> items;
-
-    private int mOrientation;
+    private boolean isDown;
+    private boolean mIsAnim;
 
     /**
      * fragment 生命周期：
@@ -67,15 +90,29 @@ public class WeitaoFragment extends Fragment implements Animator.AnimatorListene
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
+        // 总布局实例化
         weitaoView = inflater.inflate(R.layout.weitao_fragment, container, false);
         initView();//初始化布局
         return weitaoView;
     }
 
     private void initView() {
-        tf_action_bar = weitaoView.findViewById(R.id.tf_action_bar);
+        // 标题栏布局实例化
+        tf_app_bar_layout = (LinearLayout) weitaoView.findViewById(R.id.tf_app_bar_layout);
+        tf_action_bar = (RelativeLayout) weitaoView.findViewById(R.id.tf_action_bar);
         tf_tab_bar = (LinearLayout) weitaoView.findViewById(R.id.tf_tab_bar);
+        // tab_bar图标
+        iv_weitao_dynamic = (ImageView) weitaoView.findViewById(R.id.iv_weitao_dynamic);
+        iv_weitao_new = (ImageView) weitaoView.findViewById(R.id.iv_weitao_new);
+        iv_weitao_direct_seeding = (ImageView) weitaoView.findViewById(R.id.iv_weitao_direct_seeding);
+        iv_weitao_hot_topic = (ImageView) weitaoView.findViewById(R.id.iv_weitao_hot_topic);
+        //tab_bar文字
+        tv_weitao_dynamic = (TextView) weitaoView.findViewById(R.id.tv_weitao_dynamic);
+        tv_weitao_new = (TextView) weitaoView.findViewById(R.id.tv_weitao_new);
+        tv_weitao_direct_seeding = (TextView) weitaoView.findViewById(R.id.tv_weitao_direct_seeding);
+        tv_weitao_hot_topic = (TextView) weitaoView.findViewById(R.id.tv_weitao_hot_topic);
+
+        // 数据内容布局实例化
         recyclerView = (RecyclerView) weitaoView.findViewById(R.id.tf_tab_page);
     }
 
@@ -87,6 +124,61 @@ public class WeitaoFragment extends Fragment implements Animator.AnimatorListene
         recyclerView.setAdapter(recyclerViewAdapter = new RecyclerViewAdapter());
         //设置RecyclerView的分割线
         recyclerView.addItemDecoration(new RecyclerViewItem(getActivity(), LinearLayoutManager.VERTICAL));
+        recyclerView.setOnScrollListener(new RecyclerView.OnScrollListener() {
+            @Override
+            public void onScrollStateChanged(RecyclerView recyclerView, int newState) {
+                super.onScrollStateChanged(recyclerView, newState);
+                LinearLayoutManager manager = (LinearLayoutManager) recyclerView.getLayoutManager();
+                // 当不滚动时
+                if (newState == RecyclerView.SCROLL_STATE_IDLE) {
+                    //获取最后一个完全显示的ItemPosition
+                    int lastVisibleItem = manager.findLastCompletelyVisibleItemPosition();
+                    int totalItemCount = manager.getItemCount();
+
+                    // 判断是否滚动到底部，并且是向下滚动
+                    if (lastVisibleItem == (totalItemCount - 1) && isDown) {
+                        //加载更多功能的代码
+                        Toast.makeText(getActivity(), "客官别扯了，我们是有底线的", Toast.LENGTH_SHORT).show();
+                    }
+                } else if (newState == RecyclerView.SCROLL_STATE_DRAGGING) {
+                    if (isDown) {
+                        Log.d("txxz", "onStart0()--isDown=" + isDown);
+                        ObjectAnimator animator = ObjectAnimator.ofFloat(tf_app_bar_layout, "translationY", 0.0f, -tf_action_bar.getHeight());
+                        animator.setInterpolator(new AccelerateDecelerateInterpolator());
+                        animator.setDuration(200);
+                        animator.start();
+                        animator.addListener(WeitaoFragment.this);
+                    } else {
+                        Log.d("txxz", "onStart1()--isDown=" + isDown);
+                        ObjectAnimator animator = ObjectAnimator.ofFloat(tf_app_bar_layout, "translationY", -tf_action_bar.getHeight(), 0.0f);
+                        animator.setDuration(200);
+                        animator.setInterpolator(new AccelerateDecelerateInterpolator());
+                        animator.start();
+                        animator.addListener(WeitaoFragment.this);
+                    }
+                }
+            }
+
+            @Override
+            public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
+                super.onScrolled(recyclerView, dx, dy);
+                if (dy > 0) isDown = true;// 下滑
+                else isDown = false;// 上滑
+            }
+        });
+    }
+
+    /**
+     * 设置标题栏变化高度
+     *
+     * @param page
+     */
+    public void setMarginTop(int page) {
+        RelativeLayout.LayoutParams layoutParam = new RelativeLayout.LayoutParams(
+                RelativeLayout.LayoutParams.FILL_PARENT, RelativeLayout.LayoutParams.FILL_PARENT);
+        layoutParam.setMargins(0, page, 0, 0);
+        recyclerView.setLayoutParams(layoutParam);
+        recyclerView.invalidate();
     }
 
     /**
@@ -217,7 +309,9 @@ public class WeitaoFragment extends Fragment implements Animator.AnimatorListene
 
     @Override
     public void onAnimationEnd(Animator animation) {
-
+        if (isDown) setMarginTop(tf_app_bar_layout.getHeight() - tf_action_bar.getHeight());
+        else setMarginTop(tf_app_bar_layout.getHeight());
+        mIsAnim = false;
     }
 
     @Override
